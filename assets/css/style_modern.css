@@ -1,0 +1,199 @@
+/* --- IMPORT FONT GOOGLE (POPPINS) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* TEMA: Midnight Sakura (Gelap Elegan dengan Aksen Pink/Ungu) */
+    
+    /* Background Gelap (Dark Slate) */
+    --bg-color: #0f172a; 
+    --card-bg: #1e293b; 
+    
+    /* Teks Terang */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    /* Gradasi Warna "Cewek Kue" versi Dark Mode */
+    --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); /* Pink ke Ungu */
+    --secondary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); /* Biru ke Ungu */
+    --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%); /* Emerald Neon */
+    --danger-gradient: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%); /* Rose Red */
+    
+    --glow-color: rgba(236, 72, 153, 0.3); /* Efek cahaya pink */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR GLOWING --- */
+.navbar {
+    background: rgba(30, 41, 59, 0.8) !important; /* Semi transparan */
+    backdrop-filter: blur(10px); /* Efek kaca buram */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px var(--glow-color); /* Cahaya pink di bawah */
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Teks logo jadi gradasi */
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    padding: 8px 18px !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+/* --- KARTU GELAP ELEGAN --- */
+.card {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(236, 72, 153, 0.5); /* Border jadi pink saat hover */
+    box-shadow: 0 20px 40px -10px var(--glow-color); /* Glowing */
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- TOMBOL NEON --- */
+.btn {
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.7); /* Efek menyala terang */
+    transform: scale(1.05);
+}
+
+.btn-success { background: var(--success-gradient); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+.btn-danger { background: var(--danger-gradient); box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3); }
+
+/* --- TABEL DARK MODE --- */
+.table {
+    color: var(--text-muted);
+    border-color: rgba(255,255,255,0.1);
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table thead th {
+    background-color: #0f172a !important;
+    color: #e2e8f0;
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.table tbody tr {
+    background-color: var(--card-bg);
+    transition: transform 0.2s;
+}
+
+.table tbody tr:hover {
+    transform: scale(1.01);
+    background-color: #2d3748; /* Sedikit lebih terang saat hover */
+}
+
+.table td {
+    border: none;
+    padding: 15px;
+    vertical-align: middle;
+    color: var(--text-main);
+}
+
+.table td:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+.table td:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
+/* --- FORM INPUT GELAP --- */
+.form-control, .form-select {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 15px;
+    padding: 12px;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #0f172a;
+    color: white;
+    border-color: #ec4899; /* Pink border focus */
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+
+/* Fix Placeholder color */
+::placeholder { color: #64748b !important; opacity: 1; }
+
+/* --- MODAL GELAP --- */
+.modal-content {
+    background-color: var(--card-bg);
+    color: white;
+    border: 1px solid #334155;
+}
+.modal-header {
+    border-bottom: 1px solid #334155;
+    background: var(--primary-gradient);
+}
+.btn-close { filter: invert(1); }
+
+/* --- DASHBOARD STATS --- */
+.card-stat {
+    background: var(--card-bg) !important; /* Timpa warna lama */
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Timpa warna gradasi dashboard agar transparan & elegan */
+.bg-gradient-primary { background: linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(37,99,235,0.2) 100%) !important; border: 1px solid #3b82f6; }
+.bg-gradient-success { background: linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(5,150,105,0.2) 100%) !important; border: 1px solid #10b981; }
+.bg-gradient-danger  { background: linear-gradient(135deg, rgba(239,68,68,0.2) 0%, rgba(220,38,38,0.2) 100%) !important; border: 1px solid #ef4444; }
+.bg-gradient-info    { background: linear-gradient(135deg, rgba(6,182,212,0.2) 0%, rgba(8,145,178,0.2) 100%) !important; border: 1px solid #06b6d4; }
+
+.card-stat h3 { color: white; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+.card-stat .icon-bg { opacity: 0.1; color: white; }
+
+/* --- BANNER WELCOME --- */
+.welcome-banner {
+    background: var(--primary-gradient) !important;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2) !important;
+    border: none !important;
+}
+
+
+
